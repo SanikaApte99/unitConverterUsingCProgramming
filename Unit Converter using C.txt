@@ -1,0 +1,112 @@
+#include <stdio.h>
+
+int main()
+{
+  char category;
+  int tempChoice;
+  int currencyChoice;
+  int massChoice;
+  int userinputF; // User inputted Fahreinheit;
+  int userinputC; // User inputted Celsius;
+  int userinputUSDtoEuro; // User inputted for USD to EURO;
+  int userinputUSDtoJPY; // User inputted for USD to JPY;
+  int userinputUSDtoINR; // User inputted for USD to INR;
+  int userinputPounds; // User inputted for Pounds;
+  int userinputKilogram; // User inputted for Kilogram;
+  int fahrenheitToCelcius; // variable that stores the converted F->C;
+  int celciusToFahrenheit; // variable that stores the converted C->F;
+  float USDtoEURO ; // varaible that stores the converted USD->EURO;
+  float USDtoJPY; // stores the converted USD->JPY;
+  float USDtoINR; // stores the converted USD->INR;
+  float PoundstoKilogram; // stores the converted Pounds->Kilogram; 
+  float KilogramsToPounds; // stores the vonerted Kilograms->Pounds;
+  
+  printf("\n Welcome to Unit Converter!");
+  printf("\n Choose the conversions you want :");
+  printf("\n Temperature(T),Currency(C),Mass(M)");
+  printf("\n Please enter the letter you want to convert.");
+  scanf("%c",&category);
+  
+  if(category == 'T')
+  {
+      printf("\n Welcome to Temperature Converter!");
+      printf("\n Choose from the list: ");
+      printf("\n Enter 1 for Fahrenheit to Celsius.");
+      printf("\n Enter 2 for Celsius to Fahrenheit.");
+      scanf("%d",&tempChoice);
+      if(tempChoice == 1)
+      {
+          printf("\n Enter the Fahrenheit degree:");
+          scanf("%d",&userinputF);
+          fahrenheitToCelcius =  ((userinputF-32) * (5.0/9.0));
+          printf("Celcius: %d",fahrenheitToCelcius);
+      }
+      else if(tempChoice == 2)
+      {
+        printf("\n Please enter the Celcius degree:");
+        scanf("%d",&userinputC);
+        celciusToFahrenheit = ((9.0/5.0)*userinputC + 32);
+        printf("Fahrenheit: %d",celciusToFahrenheit);
+      }
+      else
+        printf("\n Incorrect choice.");
+  }
+  
+  else if(category == 'C') 
+  {
+      printf("\n Welcome to Currency Converter!");
+      printf("\n Choose from the list:");
+      printf("\n Enter 1 for USD to Euro.");
+      printf("\n Enter 2 for USD to JPY.");
+      printf("\n Enter 3 for USD to INR.");
+      scanf("%d",&currencyChoice);
+      if(currencyChoice == 1)
+      {
+          printf("\n Please enter the USD amount:");
+          scanf("%d",&userinputUSDtoEuro);
+          USDtoEURO = userinputUSDtoEuro * 0.87;
+          printf("Euro: %.2f",USDtoEURO); // %.2f = rounds the float to only 2 decimal places;
+      }
+      else if(currencyChoice == 2)
+      {
+          printf("\n Please enter the USD amount:");
+          scanf("%d",&userinputUSDtoJPY);
+          USDtoJPY = userinputUSDtoJPY * 111.09;
+          printf("JPY: %.2f",USDtoJPY);
+      }
+      else if(currencyChoice == 3) 
+      {
+        printf("\n Please enter the USD amount:");
+        scanf("%d",&userinputUSDtoINR);
+        USDtoINR = userinputUSDtoINR * 81.63;
+        printf("INR: %.2f",USDtoINR);
+      }
+      else
+        printf("\n Incorrect choice.");
+   }
+  else if(category == 'M')
+  {
+      printf("\n Welcome to Mass Converter!");
+      printf("\n Choose from the list:");
+      printf("\n Enter 1 for Pounds to Kilograms.");
+      printf("\n Enter 2 for Kilograms to Pounds.");
+      scanf("%d",&massChoice);
+      if(massChoice == 1)
+      {
+          printf("\n Please enter the Pounds amount:");
+          scanf("%d",&userinputPounds);
+          PoundstoKilogram = userinputPounds / 2.205;
+          printf("Kilograms: %.2f",PoundstoKilogram);
+      }
+      else if(massChoice == 2) 
+      {
+          printf("\n Please enter the Kilogram amount:");
+          scanf("%d",&userinputKilogram);
+          KilogramsToPounds = userinputKilogram *2.205;
+          printf("Pounds: %.2f",KilogramsToPounds);
+      }
+      else 
+        printf("\n Incorrect choice.");
+   }
+  return 0;
+}
