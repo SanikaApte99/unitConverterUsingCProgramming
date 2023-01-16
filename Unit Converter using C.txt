@@ -10,16 +10,16 @@ int main()
   int userinputC; // User inputted Celsius;
   int userinputUSDtoEuro; // User inputted for USD to EURO;
   int userinputUSDtoJPY; // User inputted for USD to JPY;
-  int userinputUSDtoINR; // User inputted for USD to INR;
-  int userinputPounds; // User inputted for Pounds;
-  int userinputKilogram; // User inputted for Kilogram;
+  int userinputUSDtoRMB; // User inputted for USD to RMB;
+  int userinputOunce; // User inputted for Ounce;
+  int userinputGram; // User inputted for Gram;
   int fahrenheitToCelcius; // variable that stores the converted F->C;
   int celciusToFahrenheit; // variable that stores the converted C->F;
   float USDtoEURO ; // varaible that stores the converted USD->EURO;
   float USDtoJPY; // stores the converted USD->JPY;
-  float USDtoINR; // stores the converted USD->INR;
-  float PoundstoKilogram; // stores the converted Pounds->Kilogram; 
-  float KilogramsToPounds; // stores the vonerted Kilograms->Pounds;
+  float USDtoRMB; // stores the converted USD->RMB;
+  float ounceToPounds; // stores the converted Ounce->Pounds; 
+  float gramsToPounds; // stores the vonerted Grams->Pounds;
   
   printf("\n Welcome to Unit Converter!");
   printf("\n Choose the conversions you want :");
@@ -58,7 +58,7 @@ int main()
       printf("\n Choose from the list:");
       printf("\n Enter 1 for USD to Euro.");
       printf("\n Enter 2 for USD to JPY.");
-      printf("\n Enter 3 for USD to INR.");
+      printf("\n Enter 3 for USD to RMB.");
       scanf("%d",&currencyChoice);
       if(currencyChoice == 1)
       {
@@ -77,9 +77,9 @@ int main()
       else if(currencyChoice == 3) 
       {
         printf("\n Please enter the USD amount:");
-        scanf("%d",&userinputUSDtoINR);
-        USDtoINR = userinputUSDtoINR * 81.63;
-        printf("INR: %.2f",USDtoINR);
+        scanf("%d",&userinputUSDtoRMB);
+        USDtoRMB = userinputUSDtoRMB * 6.82;
+        printf("RMB: %.2f",USDtoRMB);
       }
       else
         printf("\n Incorrect choice.");
@@ -88,22 +88,22 @@ int main()
   {
       printf("\n Welcome to Mass Converter!");
       printf("\n Choose from the list:");
-      printf("\n Enter 1 for Pounds to Kilograms.");
-      printf("\n Enter 2 for Kilograms to Pounds.");
+      printf("\n Enter 1 for ounces to pounds.");
+      printf("\n Enter 2 for gram to pounds.");
       scanf("%d",&massChoice);
       if(massChoice == 1)
       {
-          printf("\n Please enter the Pounds amount:");
-          scanf("%d",&userinputPounds);
-          PoundstoKilogram = userinputPounds / 2.205;
-          printf("Kilograms: %.2f",PoundstoKilogram);
+          printf("\n Please enter the ounce amount:");
+          scanf("%d",&userinputOunce);
+          ounceToPounds = userinputOunce * 0.0625;
+          printf("Pounds: %.2f",ounceToPounds);
       }
       else if(massChoice == 2) 
       {
-          printf("\n Please enter the Kilogram amount:");
-          scanf("%d",&userinputKilogram);
-          KilogramsToPounds = userinputKilogram *2.205;
-          printf("Pounds: %.2f",KilogramsToPounds);
+          printf("\n Please enter the gram amount:");
+          scanf("%d",&userinputGram);
+          gramsToPounds = userinputGram * 0.00220462;
+          printf("Pounds: %.2f",gramsToPounds);
       }
       else 
         printf("\n Incorrect choice.");
